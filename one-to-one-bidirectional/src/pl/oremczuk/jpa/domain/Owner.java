@@ -1,0 +1,50 @@
+package pl.oremczuk.jpa.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Owner {
+	
+	@Id
+	@GeneratedValue
+	private long ID;
+	
+	private String firstName;
+	private String lastName;
+	
+	@OneToOne
+	private Cat cat;
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Cat getCat() {
+		return cat;
+	}
+
+	public void setCat(Cat cat) {
+		this.cat = cat;
+	}
+
+	public long getID() {
+		return ID;
+	}
+
+
+}
